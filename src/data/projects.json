@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Student Registeration Portal",
+    "imageSrc": "projects/project.png",
+    "description": "Website for students activites",
+    "skills": ["Java", "MYSQL", "SpringBoot"],
+    "source": "https://github.com/shubam3/StudentRegisteration"
+  },
+  {
+    "title": "BloodBank Web App",
+    "imageSrc": "projects/project.png",
+    "description": "Used to manage supply of blood",
+    "skills": ["React", "MongoDb", "Node"],
+    "source": "https://github.com/shubam3/BloodBankApp"
+  },
+  {
+    "title": "Age and Gender Prediction",
+    "imageSrc": "projects/project.png",
+    "description": "This is a project made to learn",
+    "skills": ["Python", "OpenCV", "ML"],
+    "source": "https://github.com/shubam3/Age-and-Gender-Prediction"
+  }
+]

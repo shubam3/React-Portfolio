@@ -1,0 +1,24 @@
+[
+  {
+    "role": "Full-Stack Developer",
+    "organisation": "Ayavin Solutions",
+    "startdate": "May 2022",
+    "enddate": "present",
+    "experiences": [
+      "worked on .NET web based project",
+      "reduced load time by 20%"
+    ],
+    "imageSrc": "history/Ayavin.png"
+  },
+  {
+    "role": "software engineer intern",
+    "organisation": "Virtuemantra",
+    "startdate": "Dec 2021",
+    "enddate": "Mar 2022",
+    "experiences": [
+      "Learned Technical skills",
+      "Solved 100s of bugs in system"
+    ],
+    "imageSrc": "history/Vm.jpeg"
+  }
+]
