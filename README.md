@@ -8,4 +8,4 @@ I believe in the importance of clean and maintainable code. Throughout my projec
 
 Feel free to explore the showcased projects, each accompanied by a brief description of its objectives, technologies used, and the lessons learned during development. Whether you're interested in my e-commerce applications, data visualization projects, or any other piece of work, I'm excited to share my enthusiasm for React and its capabilities.
 
-Thank you for visiting my React portfolio. I hope you find inspiration in my projects, and I look forward to discussing how I can contribute to creating innovative and impactful web solutions.
+Thank you for visiting my React portfolio.
