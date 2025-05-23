@@ -1,24 +1,35 @@
 [
   {
-    "role": "Full-Stack Developer",
-    "organisation": "Ayavin Solutions",
-    "startdate": "May 2022",
-    "enddate": "present",
+    "role": "Research Intern",
+    "organisation": "Commonwealth Cyber Initiative (CCI)",
+    "startdate": "May 2025",
+    "enddate": "Present",
     "experiences": [
-      "worked on .NET web based project",
-      "reduced load time by 20%"
+      "Virtualized xG Testbed with OpenStack, improving scalability and reducing latency by 30%.",
+      "Optimized resource allocation using Kubernetes and Docker."
     ],
-    "imageSrc": "history/Ayavin.png"
+    "imageSrc": "history/CCI_MainLogo.png"
   },
   {
-    "role": "software engineer intern",
-    "organisation": "Virtuemantra",
-    "startdate": "Dec 2021",
-    "enddate": "Mar 2022",
+    "role": "Software Engineer",
+    "organisation": "Groot",
+    "startdate": "Feb 2024",
+    "enddate": "July 2024",
     "experiences": [
-      "Learned Technical skills",
-      "Solved 100s of bugs in system"
+      "Refactored React-Redux app, improving state efficiency and reducing costs by 25%.",
+      "Reduced frontend load time by 30% via performance engineering."
     ],
-    "imageSrc": "history/Vm.jpeg"
+    "imageSrc": "history/Groot.png"
+  },
+  {
+    "role": "Software Engineer",
+    "organisation": "Ayavin Solutions",
+    "startdate": "May 2022",
+    "enddate": "June 2023",
+    "experiences": [
+      "Built scalable RESTful APIs with Java and Spring Boot.",
+      "Optimized MySQL queries, improving performance by 30%."
+    ],
+    "imageSrc": "history/Ayavin.png"
   }
 ]

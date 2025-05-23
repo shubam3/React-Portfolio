@@ -1,44 +1,92 @@
 /* eslint-disable react/no-unescaped-entities */
-//import React from 'react'
+import React from 'react';
 import { getImageUrl } from "./../../utils";
 import styles from "./About.module.css";
+import { useTheme } from "../../context/ThemeContext";
+import './AboutCustom.css';
 
 const About = () => {
+  const { isDarkTheme } = useTheme();
+  
+  // Apply direct DOM manipulation to fix the About section in white theme
+  React.useEffect(() => {
+    const aboutItems = document.querySelectorAll('[class*="aboutItem"]');
+    
+    if (!isDarkTheme) {
+      // Apply light theme styles with pure white background
+      aboutItems.forEach(item => {
+        item.style.backgroundColor = '#ffffff';
+        item.style.background = '#ffffff';
+        item.style.borderColor = '#e0e0e0';
+        item.style.color = '#1c1c27';
+        
+        // Apply styles to child elements
+        const titles = item.querySelectorAll('h3');
+        const descriptions = item.querySelectorAll('p');
+        
+        titles.forEach(title => {
+          title.style.color = '#1c1c27';
+        });
+        
+        descriptions.forEach(desc => {
+          desc.style.color = '#1c1c27';
+        });
+      });
+    } else {
+      // Reset styles when in dark theme
+      aboutItems.forEach(item => {
+        item.style.backgroundColor = '';
+        item.style.background = '';
+        item.style.borderColor = '';
+        item.style.color = '';
+        
+        // Reset child element styles
+        const titles = item.querySelectorAll('h3');
+        const descriptions = item.querySelectorAll('p');
+        
+        titles.forEach(title => {
+          title.style.color = '';
+        });
+        
+        descriptions.forEach(desc => {
+          desc.style.color = '';
+        });
+      });
+    }
+  }, [isDarkTheme]); // Re-apply whenever theme changes
+  
   return (
     <section className={styles.container} id="about">
+      <div style={{ marginTop: '60px' }} />
       <h2 className={styles.title}>About</h2>
+      <div style={{ marginBottom: '60px' }} />
+      <p className={styles.intro}>Here's what I do best:</p>
       <div className={styles.content}>
-        <img
-          src={getImageUrl("about/aboutImage.jpg")}
-          className={styles.aboutImage}
-        />
         <ul className={styles.aboutItems}>
           <li className={styles.aboutItem}>
-            <img src={getImageUrl("about/cursorIcon.png")} />
-            <div className={styles.aboutItemtext}>
-              <h3>Frontend developer</h3>
-              <p>
-                I'm a frontend developer with specialize in building responsive
-                and optimized websites{" "}
+            <span className={styles.itemIcon}>🖥️</span>
+            <div>
+              <h3 className={styles.itemTitle}>Frontend Developer</h3>
+              <p className={styles.itemDescription}>
+                Specializing in developing responsive, performance-optimized websites with exceptional user experience and modern design principles.
               </p>
             </div>
           </li>
           <li className={styles.aboutItem}>
-            <img src={getImageUrl("about/serverIcon.png")} />
-            <div className={styles.aboutItemtext}>
-              <h3>Backend developer</h3>
-              <p>
-                I have an experience in developing fast and optimized back-end
-                system and APIs
+            <span className={styles.itemIcon}>🗄️</span>
+            <div>
+              <h3 className={styles.itemTitle}>Backend Developer</h3>
+              <p className={styles.itemDescription}>
+                Experienced in designing and implementing high-performance backend systems and RESTful APIs with a focus on scalability and security.
               </p>
             </div>
           </li>
           <li className={styles.aboutItem}>
-            <img src={getImageUrl("about/cursorIcon.png")} />
-            <div className={styles.aboutItemtext}>
-              <h3>UI designer</h3>
-              <p>
-                I have designed multiple landing pages and have system as well
+            <span className={styles.itemIcon}>🤖</span>
+            <div>
+              <h3 className={styles.itemTitle}>Machine Learning & AI Enthusiast</h3>
+              <p className={styles.itemDescription}>
+                Proficient in developing and deploying end-to-end machine learning solutions, with experience in various AI frameworks and data analysis techniques.
               </p>
             </div>
           </li>

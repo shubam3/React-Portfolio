@@ -2,25 +2,48 @@
 
 .container {
   color: var(--color-text);
-  margin-top: 120px;
-  background-color: var(--color-secondary);
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: var(--color-bg);
   display: flex;
-  justify-content: space-evenly;
-  width: 100vw;
-  padding: 58px 10%;
-  gap: 10px;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+  gap: 40px;
 }
 
 .text h2 {
-  font-size: 80px;
-  font-weight: 700;
-  letter-spacing: 4px;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-top: 0;
+  margin-bottom: 0;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.text h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-primary);
 }
 
 .text p {
-  font-size: 40px;
+  font-size: 18px;
   font-weight: 400;
-  letter-spacing: 2px;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  margin-bottom: 30px;
 }
 
 .links {
@@ -28,20 +51,32 @@
   flex-direction: column;
   align-items: flex-start;
   list-style: none;
-  gap: 26px;
+  gap: 20px;
+  margin-top: 10px;
 }
 
 .link {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 15px;
+  transition: all 0.2s ease;
+}
+
+.link:hover {
+  transform: translateY(-2px);
 }
 
 .link a {
   color: var(--color-text);
   text-decoration: none;
-  font-size: 400;
-  letter-spacing: 1.5px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  transition: color 0.2s ease;
+}
+
+.link:hover a {
+  color: var(--color-primary);
 }
 
 @media screen and (max-width: 830px) {
@@ -57,5 +92,49 @@
   }
   .links {
     align-items: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 0 10px;
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+  }
+  .text h2 {
+    font-size: 1.5rem;
+    padding-bottom: 8px;
+  }
+  .text p {
+    font-size: 1rem;
+    margin-bottom: 16px;
+  }
+  .links {
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+    margin-top: 0;
+  }
+  .link {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+  }
+  .link img {
+    width: 28px;
+    height: 28px;
+  }
+  .link a {
+    font-size: 1rem;
+    word-break: break-all;
   }
 }

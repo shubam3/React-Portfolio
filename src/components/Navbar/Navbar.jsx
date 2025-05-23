@@ -1,43 +1,46 @@
-// import React from 'react'
-
+import React, { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
-
-import { getImageUrl } from "./../../utils";
-import { useState } from "react";
+import { useTheme } from "../../context/ThemeContext";
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const { isDarkTheme, toggleTheme } = useTheme();
+  const [scrolled, setScrolled] = useState(false);
+  
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 20;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrolled]);
+
   return (
-    <nav className={styles.navbar}>
+    <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''} ${!isDarkTheme ? styles.lightTheme : ''}`}>
       <a className={styles.title} href="/">
-        Shubam Khantwal
+        <div className={styles.logo}>
+          <span className={styles.bracket}>&lt;</span>
+          <span className={styles.text}>SK</span>
+          <span className={styles.slash}>/</span>
+          <span className={styles.bracket}>&gt;</span>
+        </div>
       </a>
       <div className={styles.menu}>
-        <img
-          className={styles.menuBtn}
-          src={
-            menuOpen
-              ? getImageUrl("nav/closeIcon.png")
-              : getImageUrl("nav/menuIcon.png")
-          }
-          onClick={() => setMenuOpen(!menuOpen)}
-        />
-        <ul
-          className={`${styles.menuItems} ${menuOpen && styles.menuOpen}`}
-          onClick={() => setMenuOpen(false)}
-        >
-          <li>
-            <a href="#about">About</a>
-          </li>
-          <li>
-            <a href="#experience">Experience</a>
-          </li>
-          <li>
-            <a href="#projects">Projects</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
+        <div className={styles.themeToggle} onClick={toggleTheme}>
+          {isDarkTheme ? "🌞" : "🌙"}
+        </div>
+        <ul>
+          {["about", "experience", "projects", "contact"].map((item) => (
+            <li key={item}>
+              <a href={`#${item}`}>{item}</a>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>

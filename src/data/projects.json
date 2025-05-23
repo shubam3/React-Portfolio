@@ -1,23 +1,23 @@
 [
   {
-    "title": "Student Registeration Portal",
-    "imageSrc": "projects/project.png",
-    "description": "Website for students activites",
-    "skills": ["Java", "MYSQL", "SpringBoot"],
-    "source": "https://github.com/shubam3/StudentRegisteration"
+    "title": "CRM",
+    "imageSrc": "projects/crm (1).jpeg",
+    "description": "A platform to manage financial services",
+    "skills": ["Java", "MYSQL", "ReactJS"],
+    "source": "https://crm-green-ten.vercel.app/"
   },
   {
-    "title": "BloodBank Web App",
-    "imageSrc": "projects/project.png",
-    "description": "Used to manage supply of blood",
-    "skills": ["React", "MongoDb", "Node"],
-    "source": "https://github.com/shubam3/BloodBankApp"
+    "title": "ML-Saga",
+    "imageSrc": "projects/AiMl (1).jpeg",
+    "description": "An educational platform to learn ML and AI",
+    "skills": ["React", "Tailind", "RestAPI's"],
+    "source": "https://ml-saga.vercel.app/"
   },
   {
     "title": "Age and Gender Prediction",
     "imageSrc": "projects/project.png",
-    "description": "This is a project made to learn",
-    "skills": ["Python", "OpenCV", "ML"],
+    "description": "Predict age and gender",
+    "skills": ["Python", "OpenCV", "TensorFlow"],
     "source": "https://github.com/shubam3/Age-and-Gender-Prediction"
   }
 ]

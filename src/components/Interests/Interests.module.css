@@ -1,0 +1,264 @@
+.container, .sliderContainer {
+  color: var(--color-text);
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--color-bg);
+  transition: all 0.3s ease;
+  max-width: 1100px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.lightTheme {
+  background: #ffffff;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: var(--color-text);
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-primary);
+}
+
+.sliderContainer {
+  position: relative;
+}
+
+.slider {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.interestCard {
+  max-width: 650px;
+  width: 100%;
+  margin: 0 auto 24px auto;
+  background: var(--color-card-bg);
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.interestCard.lightTheme {
+  background: #ffffff;
+  border-color: #e0e0e0;
+}
+
+.interestCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+  border-color: var(--color-primary);
+}
+
+.interestCard.lightTheme:hover {
+  border-color: var(--color-primary);
+}
+
+.cardImage {
+  width: 100%;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.interestCard:hover .cardImage img {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(to bottom, 
+    rgba(13, 35, 64, 0) 0%,
+    rgba(13, 35, 64, 0.3) 50%,
+    rgba(13, 35, 64, 0.6) 100%
+  );
+  pointer-events: none;
+}
+
+.cardContent {
+  padding: 20px;
+  background: var(--color-card-bg);
+  transition: all 0.3s ease;
+  height: 200px;
+  overflow-y: auto;
+}
+
+.cardContent.lightTheme {
+  background: #ffffff;
+}
+
+.cardContent h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--color-primary);
+}
+
+.lightTheme .cardContent h3 {
+  color: var(--color-primary);
+}
+
+.cardContent p {
+  font-size: 1.05rem;
+  opacity: 0.9;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(12, 35, 64, 0.8);
+  border: 1px solid #1e4483;
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.navButton.lightTheme {
+  background: rgba(248, 249, 250, 0.8);
+  color: #212529;
+  border-color: #dee2e6;
+}
+
+.navButton:hover {
+  background: rgba(12, 35, 64, 0.9);
+}
+
+.navButton.lightTheme:hover {
+  background: rgba(248, 249, 250, 0.9);
+  border-color: #adb5bd;
+}
+
+.prevButton {
+  left: 10px;
+}
+
+.nextButton {
+  right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .sliderContainer {
+    padding: 0 40px;
+  }
+
+  .interestCard {
+    min-width: 300px;
+  }
+
+  .cardContent h3 {
+    font-size: 1.2rem;
+  }
+
+  .cardContent p {
+    font-size: 0.95rem;
+  }
+
+  .navButton {
+    width: 35px;
+    height: 35px;
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container, .sliderContainer {
+    padding: 0 8px;
+    max-width: 100%;
+  }
+  .title {
+    font-size: 1.1rem;
+    padding-bottom: 6px;
+  }
+  .slider {
+    gap: 12px;
+    padding: 8px 0;
+  }
+  .interestCard {
+    min-width: 0;
+    max-width: 100%;
+    margin: 0 auto 12px auto;
+  }
+  .cardImage {
+    height: 120px;
+  }
+  .cardContent {
+    padding: 10px;
+    height: auto;
+  }
+  .cardContent h3 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+  .cardContent p {
+    font-size: 0.9rem;
+  }
+  .navButton {
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+  }
+}

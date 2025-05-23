@@ -1,0 +1,37 @@
+/* Custom styles for light theme items */
+.light-theme-item {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  border-color: #e0e0e0 !important;
+  color: #1c1c27 !important;
+}
+
+.light-theme-item:hover {
+  background-color: #f5f5f5 !important;
+  background: #f5f5f5 !important;
+}
+
+.light-theme-title,
+.light-theme-description {
+  color: #1c1c27 !important;
+}
+
+/* Additional overrides for any conflicting styles */
+.light-theme-item * {
+  color: #1c1c27 !important;
+}
+
+/* Force light theme styles when light theme is active */
+:root.light-theme .light-theme-item {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  border-color: #e0e0e0 !important;
+}
+
+/* Add !important to all properties to ensure they override any other styles */
+:root.light-theme .aboutItem.light-theme-item {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  border-color: #e0e0e0 !important;
+  color: #1c1c27 !important;
+}

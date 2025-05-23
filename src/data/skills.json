@@ -14,13 +14,5 @@
   {
     "title": "Java",
     "imageSrc": "skills/java.png"
-  },
-  {
-    "title": "Node",
-    "imageSrc": "skills/node.png"
-  },
-  {
-    "title": "MongoDb",
-    "imageSrc": "skills/mongodb.png"
   }
 ]
