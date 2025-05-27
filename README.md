@@ -1,6 +1,6 @@
 # Shubam Khantwal · React Portfolio
 
-[Live Site](https://shubamkhantwal.netlify.app) | [Resume PDF](./Shubam_Khantwal_Resume.pdf)
+[Live Site](https://shubamkhantwal.netlify.app) 
 
 A single-page React application that showcases my journey as a full-stack software engineer, my concentration in AI/ML, and a curated set of projects spanning web, DevOps, data analytics, and NLP.
 
