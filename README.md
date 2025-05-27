@@ -1,11 +1,60 @@
-Welcome to my React portfolio, where I showcase my journey in web development and my passion for creating interactive and user-friendly applications. As a dedicated React developer, I leverage the power of this JavaScript library to build dynamic and responsive web experiences.
+# Shubam Khantwal · React Portfolio
 
-In my portfolio, you'll find a collection of projects that highlight my skills in crafting modern and efficient user interfaces. From single-page applications to interactive components, each project demonstrates my commitment to creating seamless digital experiences. I pay close attention to the user experience, ensuring that every interaction is intuitive and engaging.
+[Live Site](https://shubamkhantwal.netlify.app) | [Resume PDF](./Shubam_Khantwal_Resume.pdf)
 
-One of my notable projects involves the implementation of state-of-the-art features using React hooks, such as useState and useEffect, to manage the application's state and lifecycle effectively. Additionally, I've integrated third-party APIs to fetch and display real-time data, showcasing my ability to work with external services to enhance functionality.
+A single-page React application that showcases my journey as a full-stack software engineer, my concentration in AI/ML, and a curated set of projects spanning web, DevOps, data analytics, and NLP.
 
-I believe in the importance of clean and maintainable code. Throughout my projects, you'll notice my adherence to best practices and the use of component-based architecture, making the codebase scalable and easy to comprehend. I enjoy the challenge of optimizing performance, and you'll see instances where I've employed React's virtual DOM to achieve efficient rendering.
+---
 
-Feel free to explore the showcased projects, each accompanied by a brief description of its objectives, technologies used, and the lessons learned during development. Whether you're interested in my e-commerce applications, data visualization projects, or any other piece of work, I'm excited to share my enthusiasm for React and its capabilities.
+## ✨ Highlights
+
+| Area | What I Demonstrate |
+|------|--------------------|
+| **Front-End** | Modern UI built with React, hooks, and component-based architecture. |
+| **Back-End & DevOps** | CI/CD pipelines (GitLab & Azure DevOps), Docker/Kubernetes, RESTful APIs. |
+| **AI & ML** | Retail consumer-analytics dashboard (Python + Pandas + scikit-learn) and transformer-based dialogue-summarization model (Hugging Face, PyTorch). |
+| **Performance** | Code-splitting, lazy loading, and virtual-DOM optimizations for < 1 s first paint on desktop. |
+| **Clean Code** | Type-safe components, linting/prettier, and 100 % Lighthouse accessibility score. |
+
+---
+
+## 🛠 Tech Stack
+
+- **Front-End:** React 18, Vite, React Router, Tailwind CSS  
+- **State Management:** Context API & custom hooks (`useState`, `useEffect`, `useReducer`)  
+- **Back-End Demos:** Node/Express samples, FastAPI (for ML endpoints)  
+- **CI/CD:** GitLab CI, Azure DevOps, Netlify Deploy Previews  
+- **Testing:** Vitest, React Testing Library  
+- **Tooling:** ESLint, Prettier, Husky, Commitlint
+
+---
+
+## 🚀 Key Projects Showcased
+
+| Project | Stack | What You’ll See |
+|---------|-------|-----------------|
+| **MediMate** (AI health assistant) | Next.js · FastAPI · LangChain | Symptom checking, sentiment analysis, ≥ 95 % API test coverage |
+| **Retail Consumer Analytics** | React + Dash · Python · scikit-learn | Sales forecasting, customer-segmentation clustering |
+| **Dialogue Summarizer** | Hugging Face · PyTorch | Transformer fine-tuning for concise multi-turn summaries |
+| **NeoBank System** | Java · Spring Boot · MySQL · React | Secure funds transfer, 30 % faster SQL queries |
+| **xG Testbed DevOps** | OpenStack · Kubernetes · GitLab CI | 30 % latency drop, 40 % faster infra updates |
+
+*(Each card on the site links to code or a live demo.)*
+
+---
+
+## 🔧 Running Locally
+
+```bash
+# 1. Clone
+git clone https://github.com/<your-username>/portfolio.git
+cd portfolio
+
+# 2. Install
+npm install    # or pnpm i / yarn
+
+# 3. Start dev server
+npm run dev
+
 
 Thank you for visiting my portfolio.
