@@ -68,7 +68,7 @@ const About = () => {
             <div>
               <h3 className={styles.itemTitle}>Frontend Developer</h3>
               <p className={styles.itemDescription}>
-                Specializing in developing responsive, performance-optimized websites with exceptional user experience and modern design principles.
+                Specialized in developing <span className={styles.highlightKeyword}>responsive</span>, <span className={styles.highlightKeyword}>performance-optimized</span> websites that deliver exceptional user experiences and follow modern design principles.
               </p>
             </div>
           </li>
@@ -77,7 +77,7 @@ const About = () => {
             <div>
               <h3 className={styles.itemTitle}>Backend Developer</h3>
               <p className={styles.itemDescription}>
-                Experienced in designing and implementing high-performance backend systems and RESTful APIs with a focus on scalability and security.
+                Experienced in designing and implementing <span className={styles.highlightKeyword}>high-performance backend systems</span> and <span className={styles.highlightKeyword}>RESTful APIs</span>, with a focus on scalability and security.
               </p>
             </div>
           </li>
@@ -86,7 +86,7 @@ const About = () => {
             <div>
               <h3 className={styles.itemTitle}>Machine Learning & AI Enthusiast</h3>
               <p className={styles.itemDescription}>
-                Proficient in developing and deploying end-to-end machine learning solutions, with experience in various AI frameworks and data analysis techniques.
+                Proficient in developing and deploying <span className={styles.highlightKeyword}>end-to-end machine learning solutions</span>, with experience in various <span className={styles.highlightKeyword}>AI frameworks</span> and <span className={styles.highlightKeyword}>data analysis techniques</span>.
               </p>
             </div>
           </li>

@@ -22,7 +22,7 @@ const Education = () => {
       <div className={styles.content}>
         <div className={styles.educationCard}>
           <h3>🎓 Virginia Tech</h3>
-          <p className={styles.degree}>Maste's in Computer Science</p>
+          <p className={styles.degree}>Master's in Computer Science</p>
           <p className={styles.date}>2024 - 2026</p>
           <div className={styles.courseList}>
             {courses.map((course, index) => (

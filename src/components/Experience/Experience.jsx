@@ -40,7 +40,11 @@ const Experience = () => {
                   </div>
                   <ul>
                     {historyItem.experiences.map((experience, id) => {
-                      return <li key={id}>{experience}</li>;
+                      // Highlight keywords for impact
+                      let exp = experience
+                        .replace(/RESTful APIs?/gi, '<span class="'+styles.highlightKeyword+'">$&</span>')
+                        .replace(/React-Redux|MySQL|Kubernetes|Docker|OpenStack|performance|scalability|resource allocation|frontend|backend|AI|machine learning|state efficiency|costs|load time|Spring Boot/gi, '<span class="'+styles.highlightKeyword+'">$&</span>');
+                      return <li key={id} dangerouslySetInnerHTML={{__html: exp}} />;
                     })}
                   </ul>
                 </div>

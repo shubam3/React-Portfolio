@@ -90,20 +90,28 @@
 }
 
 .aboutItem {
-  background: var(--color-card-bg);
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-  padding: 18px 32px;
+  background: rgba(87, 108, 188, 0.13);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(87, 108, 188, 0.10);
+  padding: 22px 36px;
   margin-bottom: 28px;
   display: flex;
   align-items: flex-start;
   gap: 18px;
-  transition: transform 0.2s, box-shadow 0.2s;
-  border: 1px solid var(--color-border);
+  transition: transform 0.25s cubic-bezier(0.4,0.2,0.2,1), box-shadow 0.25s cubic-bezier(0.4,0.2,0.2,1), border-color 0.25s;
+  border: 2px solid rgba(87, 108, 188, 0.18);
   max-width: 850px;
   width: 100%;
   animation: fadeInUp 0.7s;
   margin: 0 auto 28px auto;
+}
+
+.aboutItem:hover {
+  transform: translateY(-8px) scale(1.025);
+  box-shadow: 0 12px 36px rgba(87, 108, 188, 0.18);
+  border-color: var(--color-primary);
+  background: rgba(87, 108, 188, 0.18);
 }
 
 @keyframes fadeInUp {
@@ -140,10 +148,17 @@
   font-weight: 400;
 }
 
+/* Highlight keywords in description */
+.highlightKeyword {
+  color: #7ea7e6;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
 .intro {
   text-align: center;
   font-size: 1.1rem;
-  color: var(--color-primary);
+  color: #7ea7e6;
   margin-bottom: 24px;
   font-weight: 500;
 }

@@ -2,21 +2,21 @@
   {
     "title": "CRM",
     "imageSrc": "projects/crm (1).jpeg",
-    "description": "A platform to manage financial services",
+    "description": "A platform for managing financial services",
     "skills": ["Java", "MYSQL", "ReactJS"],
     "source": "https://crm-green-ten.vercel.app/"
   },
   {
     "title": "ML-Saga",
     "imageSrc": "projects/AiMl (1).jpeg",
-    "description": "An educational platform to learn ML and AI",
+    "description": "An educational platform for learning ML and AI",
     "skills": ["React", "Tailind", "RestAPI's"],
     "source": "https://ml-saga.vercel.app/"
   },
   {
     "title": "Age and Gender Prediction",
     "imageSrc": "projects/project.png",
-    "description": "Predict age and gender",
+    "description": "Predicts age and gender",
     "skills": ["Python", "OpenCV", "TensorFlow"],
     "source": "https://github.com/shubam3/Age-and-Gender-Prediction"
   }

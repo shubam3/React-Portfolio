@@ -37,7 +37,7 @@ const Hero = () => {
             </div>
             <div className={styles.description}>
               <p>
-              Currently a student at Virginia Tech with a passion for problem-solving and a strong foundation in software development. Curious about my journey? Feel free to download my resume using the button below.
+                I am currently a student at Virginia Tech with solid experience as a software developer. Want to learn more about my journey? Download my resume below!
               </p>
             </div>
             <div className={styles.buttonContainer}>

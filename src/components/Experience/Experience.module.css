@@ -46,7 +46,7 @@
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background-color: var(--color-primary);
+  background-color: #7ea7e6;
 }
 
 .content {
@@ -85,20 +85,21 @@
   justify-content: center;
   text-align: center;
   padding: 10px 6px;
-  background: var(--color-card-bg);
-  border-radius: 8px;
-  border: 1px solid var(--color-border);
-  transition: all 0.2s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background: rgba(87, 108, 188, 0.13);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  border: 2px solid rgba(87, 108, 188, 0.18);
+  transition: all 0.2s cubic-bezier(0.4,0.2,0.2,1);
+  box-shadow: 0 4px 16px rgba(87, 108, 188, 0.10);
   min-height: 60px;
   margin: 0;
 }
 
 .skill:hover {
-  transform: translateY(-3px);
-  background: var(--color-card-hover);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(87, 108, 188, 0.18);
   border-color: var(--color-primary);
+  background: rgba(87, 108, 188, 0.18);
 }
 
 .skillImageContainer {
@@ -137,22 +138,23 @@
 .historyItem {
   display: flex;
   gap: 8px;
-  padding: 10px;
-  background: var(--color-card-bg);
-  border-radius: 8px;
-  border: 1px solid var(--color-border);
-  transition: all 0.2s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 18px 24px;
+  background: rgba(87, 108, 188, 0.13);
+  backdrop-filter: blur(8px);
+  border-radius: 14px;
+  border: 2px solid rgba(87, 108, 188, 0.18);
+  transition: all 0.2s cubic-bezier(0.4,0.2,0.2,1);
+  box-shadow: 0 4px 16px rgba(87, 108, 188, 0.10);
   max-width: 650px;
   width: 100%;
-  margin: 0 auto 12px auto;
+  margin: 0 auto 18px auto;
 }
 
 .historyItem:hover {
-  transform: translateY(-3px);
-  background: var(--color-card-hover);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px) scale(1.025);
+  box-shadow: 0 12px 36px rgba(87, 108, 188, 0.18);
   border-color: var(--color-primary);
+  background: rgba(87, 108, 188, 0.18);
 }
 
 .historyItem img {
@@ -192,6 +194,13 @@
   margin-bottom: 8px;
   line-height: 1.5;
   opacity: 0.9;
+}
+
+/* Highlight keywords in experience details */
+.highlightKeyword {
+  color: #7ea7e6;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 /* Responsive Design */
