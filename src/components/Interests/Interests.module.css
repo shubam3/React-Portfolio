@@ -1,97 +1,96 @@
-.container, .sliderContainer {
-  color: var(--color-text);
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: var(--color-bg);
-  transition: all 0.3s ease;
-  max-width: 1100px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+@import "../../vars.css";
+
+.container {
+  padding: var(--spacing-2xl) 0;
+  position: relative;
+  z-index: 1;
 }
 
-.lightTheme {
-  background: #ffffff;
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.titleIcon {
+  color: var(--color-primary);
 }
 
 .title {
-  font-size: 28px;
-  font-weight: 600;
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 0;
-  color: var(--color-text);
-  letter-spacing: 0.5px;
-  position: relative;
-  padding-bottom: 15px;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  margin: 0;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 2px;
-  background-color: var(--color-primary);
+.subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
-.sliderContainer {
-  position: relative;
-}
-
-.slider {
-  display: flex;
-  gap: 30px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 20px 0;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.slider::-webkit-scrollbar {
-  display: none;
+.interestsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-2xl);
 }
 
 .interestCard {
-  max-width: 650px;
-  width: 100%;
-  margin: 0 auto 24px auto;
-  background: var(--color-card-bg);
-  border-radius: 4px;
-  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
   overflow: hidden;
-  transition: all 0.3s ease;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all var(--transition-normal);
   position: relative;
 }
 
-.interestCard.lightTheme {
-  background: #ffffff;
-  border-color: #e0e0e0;
+.interestCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transition: transform var(--transition-normal);
+  z-index: 2;
+}
+
+.interestCard:hover::before {
+  transform: scaleX(1);
 }
 
 .interestCard:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.08);
   border-color: var(--color-primary);
-}
-
-.interestCard.lightTheme:hover {
-  border-color: var(--color-primary);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 .cardImage {
-  width: 100%;
-  height: 250px;
   position: relative;
+  width: 100%;
+  height: 200px;
   overflow: hidden;
 }
 
@@ -99,189 +98,165 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform var(--transition-normal);
 }
 
 .interestCard:hover .cardImage img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
-.overlay {
+.imageOverlay {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   right: 0;
-  height: 100%;
-  background: linear-gradient(to bottom, 
-    rgba(13, 35, 64, 0) 0%,
-    rgba(13, 35, 64, 0.3) 50%,
-    rgba(13, 35, 64, 0.6) 100%
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.6) 100%
   );
-  pointer-events: none;
-}
-
-.cardContent {
-  padding: 20px;
-  background: var(--color-card-bg);
-  transition: all 0.3s ease;
-  height: 200px;
-  overflow-y: auto;
-}
-
-.cardContent.lightTheme {
-  background: #ffffff;
-}
-
-.cardContent h3 {
-  font-size: 1.25rem;
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  color: #7ea7e6;
-}
-
-.lightTheme .cardContent h3 {
-  color: #7ea7e6;
-}
-
-.cardContent p {
-  font-size: 1.05rem;
-  opacity: 0.9;
-  line-height: 1.6;
-  letter-spacing: 0.01em;
-}
-
-.navButton {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(12, 35, 64, 0.8);
-  border: 1px solid #1e4483;
-  color: white;
-  font-size: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  z-index: 1;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
 }
 
-.navButton.lightTheme {
-  background: rgba(248, 249, 250, 0.8);
-  color: #212529;
-  border-color: #dee2e6;
+.interestCard:hover .imageOverlay {
+  opacity: 1;
 }
 
-.navButton:hover {
-  background: rgba(12, 35, 64, 0.9);
+.iconContainer {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
-.navButton.lightTheme:hover {
-  background: rgba(248, 249, 250, 0.9);
-  border-color: #adb5bd;
+.cardContent {
+  padding: var(--spacing-xl);
 }
 
-.prevButton {
-  left: 10px;
+.interestTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-md) 0;
 }
 
-.nextButton {
-  right: 10px;
+.interestDescription {
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin: 0;
+  font-size: 0.95rem;
 }
 
-@media screen and (max-width: 768px) {
-  .title {
-    font-size: 2rem;
-  }
+.cta {
+  text-align: center;
+  margin-top: var(--spacing-2xl);
+}
 
-  .sliderContainer {
-    padding: 0 40px;
-  }
+.ctaText {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-lg);
+}
 
-  .interestCard {
-    min-width: 300px;
-  }
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background: var(--gradient-primary);
+  color: white;
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+}
 
-  .cardContent h3 {
-    font-size: 1.2rem;
-  }
+.ctaButton:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
 
-  .cardContent p {
-    font-size: 0.95rem;
-  }
+/* Light theme adjustments */
+.lightTheme .interestCard {
+  background: rgba(0, 0, 0, 0.02);
+  border-color: rgba(0, 0, 0, 0.1);
+}
 
-  .navButton {
-    width: 35px;
-    height: 35px;
-    font-size: 1.3rem;
+.lightTheme .interestCard:hover {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: var(--color-primary);
+}
+
+.lightTheme .imageOverlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+}
+
+.lightTheme .iconContainer {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content {
+    padding: 0 var(--spacing-md);
+  }
+  
+  .interestsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  .cardImage {
+    height: 180px;
+  }
+  
+  .cardContent {
+    padding: var(--spacing-lg);
+  }
+  
+  .interestTitle {
+    font-size: 1.125rem;
+  }
+  
+  .interestDescription {
+    font-size: 0.9rem;
   }
 }
 
-@media screen and (max-width: 600px) {
-  .container, .sliderContainer {
-    padding: 0 4px;
-    max-width: 100vw;
+@media (max-width: 480px) {
+  .container {
+    padding: var(--spacing-xl) 0;
   }
-  .title {
-    font-size: 1.1rem;
-    padding-bottom: 6px;
+  
+  .content {
+    padding: 0 var(--spacing-sm);
   }
-  .slider {
-    flex-direction: column;
-    gap: 16px;
-    padding: 8px 0;
-    overflow-x: visible;
-    width: 100vw;
-    max-width: 100vw;
-  }
-  .interestCard {
-    min-width: 0;
-    max-width: 98vw;
-    width: 100%;
-    margin: 0 auto 12px auto;
-    box-sizing: border-box;
-  }
+  
   .cardImage {
     height: 160px;
   }
+  
   .cardContent {
-    padding: 10px;
-    height: auto;
+    padding: var(--spacing-md);
   }
-  .cardContent h3 {
-    font-size: 1rem;
-    margin-bottom: 6px;
+  
+  .ctaButton {
+    width: 100%;
+    justify-content: center;
   }
-  .cardContent p {
-    font-size: 0.9rem;
-  }
-  .navButton {
-    width: 36px;
-    height: 36px;
-    font-size: 1.2rem;
-    top: unset;
-    bottom: 8px;
-    transform: none;
-    position: absolute;
-    z-index: 2;
-  }
-  .prevButton {
-    left: 8px;
-  }
-  .nextButton {
-    right: 8px;
-  }
-}
-
-.highlightKeyword {
-  color: #7ea7e6;
-  font-weight: 600;
-  letter-spacing: 0.01em;
 }

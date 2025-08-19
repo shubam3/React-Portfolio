@@ -14,5 +14,21 @@
   {
     "title": "Java",
     "imageSrc": "skills/java.png"
+  },
+  {
+    "title": "C#",
+    "imageSrc": "skills/csharp.svg"
+  },
+  {
+    "title": "AWS",
+    "imageSrc": "skills/aws.svg"
+  },
+  {
+    "title": "Azure",
+    "imageSrc": "skills/azure.svg"
+  },
+  {
+    "title": "Docker",
+    "imageSrc": "skills/docker.svg"
   }
 ]

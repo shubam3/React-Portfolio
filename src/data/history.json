@@ -6,7 +6,8 @@
     "enddate": "Present",
     "experiences": [
       "Virtualized xG Testbed with OpenStack, improving scalability and reducing latency by 30%.",
-      "Optimized resource allocation using Kubernetes and Docker."
+      "Optimized resource allocation using Kubernetes and Docker.",
+      "Implemented Infrastructure as Code using Terraform for automated deployment."
     ],
     "imageSrc": "history/CCI_MainLogo.png"
   },
@@ -17,7 +18,8 @@
     "enddate": "July 2024",
     "experiences": [
       "Refactored React-Redux app, improving state efficiency and reducing costs by 25%.",
-      "Reduced frontend load time by 30% via performance engineering."
+      "Reduced frontend load time by 30% via performance engineering.",
+      "Deployed applications using AWS services (EC2, S3, CloudFront) and implemented CI/CD pipelines."
     ],
     "imageSrc": "history/Groot.png"
   },
@@ -25,10 +27,11 @@
     "role": "Software Engineer",
     "organisation": "Ayavin Solutions",
     "startdate": "May 2022",
-    "enddate": "June 2023",
+    "enddate": "Jan 2024",
     "experiences": [
       "Built scalable RESTful APIs with modern backend technologies.",
-      "Optimized MySQL queries, improving performance by 30%."
+      "Optimized MySQL queries, improving performance by 30%.",
+      "Containerized applications using Docker and orchestrated with Kubernetes for better scalability."
     ],
     "imageSrc": "history/Ayavin.png"
   }

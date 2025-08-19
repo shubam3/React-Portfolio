@@ -1,192 +1,382 @@
-.container, .content {
-  max-width: 1100px;
-  width: 100%;
+@import "../../vars.css";
+
+.container {
+  padding: var(--spacing-2xl) 0;
+  position: relative;
+  z-index: 1;
+}
+
+.content {
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.titleIcon {
+  color: var(--color-primary);
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  margin: 0;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.educationGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--spacing-xl);
 }
 
 .educationCard {
-  max-width: 850px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 36px 40px;
-  background: var(--color-card-bg);
-  border-radius: 18px;
-  border: 1.5px solid var(--color-border);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
-  text-align: center;
-  transition: box-shadow 0.3s, transform 0.3s;
-  animation: fadeInUp 0.7s;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.educationCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transition: transform var(--transition-normal);
+}
+
+.educationCard:hover::before {
+  transform: scaleX(1);
 }
 
 .educationCard:hover {
-  box-shadow: 0 12px 36px rgba(0,0,0,0.16);
-  transform: translateY(-4px) scale(1.01);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--color-primary);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-.container {
-  color: var(--color-text);
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  position: relative;
-  background: var(--color-bg);
-  transition: all 0.3s ease;
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.lightTheme {
-  background: #ffffff;
-}
-
-.lightTheme .educationCard {
-  background: #ffffff;
-  border-color: #e0e0e0;
-}
-
-.lightTheme .courseItem {
-  background: #ffffff;
-  border-color: #e0e0e0;
-}
-
-.lightTheme .courseItem:hover {
-  background: #f5f5f5;
-  border-color: #e0e0e0;
-}
-
-.container h2 {
-  font-size: 28px;
-  font-weight: 600;
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 0;
-  color: var(--color-text);
-  letter-spacing: 0.5px;
-  position: relative;
-  padding-bottom: 15px;
-}
-
-.container h2::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+.schoolIcon {
   width: 60px;
-  height: 2px;
-  background-color: var(--color-primary);
+  height: 60px;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  flex-shrink: 0;
 }
 
-.educationCard h3 {
-  font-size: 2.2rem;
-  font-weight: 800;
-  margin-bottom: 10px;
-  color: #7ea7e6;
-  letter-spacing: 0.5px;
+.schoolInfo {
+  flex: 1;
+}
+
+.schoolName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-xs) 0;
 }
 
 .degree {
-  font-size: 1.25rem;
-  opacity: 0.85;
-  margin-bottom: 6px;
-  color: var(--color-text);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0 0 var(--spacing-sm) 0;
 }
 
-.date {
-  font-size: 1.05rem;
-  opacity: 0.7;
-  margin-bottom: 22px;
+.schoolDetails {
+  display: flex;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.date, .location {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 1.125rem;
+  font-weight: 600;
   color: var(--color-text);
+  margin: 0;
 }
 
 .courseList {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-  margin-top: 24px;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
 }
 
 .courseItem {
-  padding: 16px 18px;
-  background: rgba(87, 108, 188, 0.13);
-  border-radius: 10px;
-  border: 1px solid var(--color-border);
-  font-size: 1.08rem;
-  font-weight: 500;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.courseBullet {
+  color: var(--color-primary);
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.achievementsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.achievementItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.achievementIcon {
+  font-size: 1.125rem;
+  flex-shrink: 0;
+}
+
+.statsCard {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  height: fit-content;
+}
+
+.statsCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-secondary);
+  transform: scaleX(0);
+  transition: transform var(--transition-normal);
+}
+
+.statsCard:hover::before {
+  transform: scaleX(1);
+}
+
+.statsCard:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--color-secondary);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.statsTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
   color: var(--color-text);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  transition: box-shadow 0.2s, transform 0.2s;
-  animation: fadeInUp 0.8s;
+  margin: 0 0 var(--spacing-lg) 0;
+  text-align: center;
 }
 
-.courseItem:hover {
-  box-shadow: 0 4px 16px rgba(25, 55, 109, 0.13);
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.statItem {
+  text-align: center;
+  padding: var(--spacing-md);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-normal);
+}
+
+.statItem:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.statNumber {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-xs);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+/* Light theme adjustments */
+.lightTheme .educationCard,
+.lightTheme .statsCard {
+  background: rgba(0, 0, 0, 0.02);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.lightTheme .educationCard:hover,
+.lightTheme .statsCard:hover {
+  background: rgba(0, 0, 0, 0.04);
   border-color: var(--color-primary);
-  transform: translateY(-2px) scale(1.02);
 }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px);}
-  to { opacity: 1; transform: translateY(0);}
+.lightTheme .schoolIcon {
+  background: rgba(37, 99, 235, 0.1);
 }
 
-@media screen and (max-width: 768px) {
-  .container h2 {
-    font-size: 2rem;
+.lightTheme .cardHeader {
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+.lightTheme .statItem {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.lightTheme .statItem:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content {
+    padding: 0 var(--spacing-md);
   }
-
-  .educationCard h3 {
+  
+  .educationGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+  
+  .schoolIcon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .schoolDetails {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
+  
+  .statItem {
+    padding: var(--spacing-sm);
+  }
+  
+  .statNumber {
     font-size: 1.5rem;
   }
-
-  .degree {
-    font-size: 1.1rem;
-  }
-
-  .courseItem {
-    font-size: 1rem;
-    padding: 14px 16px;
-  }
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 480px) {
   .container {
-    padding: 0 8px;
+    padding: var(--spacing-xl) 0;
   }
-  .container h2 {
-    font-size: 1.1rem;
-    padding-bottom: 6px;
-  }
+  
   .content {
-    max-width: 100%;
-    min-width: 0;
-    padding: 0;
+    padding: 0 var(--spacing-sm);
   }
-  .educationCard {
-    padding: 12px 8px;
-    max-width: 100%;
+  
+  .educationCard,
+  .statsCard {
+    padding: var(--spacing-lg);
   }
-  .educationCard h3 {
-    font-size: 1.1rem;
-    margin-bottom: 6px;
+  
+  .schoolName {
+    font-size: 1.25rem;
   }
+  
   .degree {
-    font-size: 0.95rem;
-    margin-bottom: 4px;
+    font-size: 1rem;
   }
-  .date {
-    font-size: 0.85rem;
-    margin-bottom: 10px;
-  }
-  .courseList {
-    gap: 10px;
-    margin-top: 10px;
+  
+  .statsGrid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
   }
-  .courseItem {
-    font-size: 0.95rem;
-    padding: 8px 6px;
+  
+  .statNumber {
+    font-size: 1.75rem;
   }
 }
